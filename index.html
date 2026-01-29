@@ -3,65 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volunteer Log</title>
+  <title>Simple Volunteer Log</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h1>Volunteer Log</h1>
 
-<!-- Login form -->
-<div id="loginDiv">
-  <h2>Login</h2>
-  <label for="username">Username:</label>
-  <input type="text" id="username" placeholder="Enter username">
-  <label for="password">Password:</label>
-  <input type="password" id="password" placeholder="Enter password">
-  <button id="loginBtn">Login</button>
-</div>
+<form id="volunteerForm">
+  <label for="date">Date:</label>
+  <input type="date" id="date" required>
 
-<!-- Main app, hidden until login -->
-<div id="appDiv" style="display:none;">
-  <button id="logoutBtn">Logout</button>
+  <label for="club">Activity/Club:</label>
+  <input type="text" id="club" placeholder="e.g., Girls Empowerment" required>
 
-  <form id="volunteerForm">
-    <label for="date">Date:</label>
-    <input type="date" id="date" required>
+  <label for="hours">Hours:</label>
+  <input type="number" id="hours" min="0" step="0.1" required>
 
-    <label for="club">Activity/Club:</label>
-    <select id="club">
-      <option value="Girls Empowerment">Girls Empowerment</option>
-      <option value="TigerLeads">TigerLeads</option>
-      <option value="Amnesty International">Amnesty International</option>
-      <option value="STEAM Camp">STEAM Camp</option>
-      <option value="Other">Other</option>
-    </select>
+  <label for="notes">Reflection / Notes:</label>
+  <textarea id="notes" placeholder="Write what you did..." rows="2"></textarea>
 
-    <label for="hours">Hours:</label>
-    <input type="number" id="hours" min="0" step="0.1" required>
+  <button type="submit">Add Entry</button>
+</form>
 
-    <label for="notes">Reflection / Notes:</label>
-    <textarea id="notes" placeholder="Write what you did..." rows="2"></textarea>
+<h2>Total Hours: <span id="totalHours">0</span></h2>
 
-    <button type="submit">Add Entry</button>
-  </form>
-
-  <h2>Total Hours: <span id="totalHours">0</span></h2>
-
-  <table id="logTable">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Club</th>
-        <th>Hours</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Entries will appear here -->
-    </tbody>
-  </table>
-</div>
+<table id="logTable">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Club</th>
+      <th>Hours</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Entries appear here -->
+  </tbody>
+</table>
 
 <script src="script.js"></script>
 </body>
