@@ -8,9 +8,22 @@
 </head>
 <body>
 
-  <h1>Volunteer Log</h1>
+<h1>Volunteer Log</h1>
 
-  <!-- Form to add volunteer entry -->
+<!-- Login form -->
+<div id="loginDiv">
+  <h2>Login</h2>
+  <label for="username">Username:</label>
+  <input type="text" id="username" placeholder="Enter username">
+  <label for="password">Password:</label>
+  <input type="password" id="password" placeholder="Enter password">
+  <button id="loginBtn">Login</button>
+</div>
+
+<!-- Main app, hidden until login -->
+<div id="appDiv" style="display:none;">
+  <button id="logoutBtn">Logout</button>
+
   <form id="volunteerForm">
     <label for="date">Date:</label>
     <input type="date" id="date" required>
@@ -35,7 +48,6 @@
 
   <h2>Total Hours: <span id="totalHours">0</span></h2>
 
-  <!-- Table to display logged entries -->
   <table id="logTable">
     <thead>
       <tr>
@@ -49,7 +61,8 @@
       <!-- Entries will appear here -->
     </tbody>
   </table>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
