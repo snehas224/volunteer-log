@@ -43,17 +43,19 @@ function renderEntries() {
     totalHours += entry.hours;
 
     // Add delete button
-    const deleteCell = row.insertCell(4);
-    const deleteBtn = document.createElement("button");
-    deleteBtn.innerText = "Delete";
-    deleteBtn.style.cursor = "pointer";
-    deleteBtn.addEventListener("click", function() {
-      entries.splice(index, 1); // Remove entry from array
-      localStorage.setItem("volunteerLogEntries", JSON.stringify(entries));
-      renderEntries(); // Re-render table
-    });
-    deleteCell.appendChild(deleteBtn);
+const deleteCell = row.insertCell(4); // 5th column
+const deleteBtn = document.createElement("button");
+deleteBtn.innerText = "Delete";
+deleteBtn.style.cursor = "pointer";
+deleteBtn.addEventListener("click", function() {
+  entries.splice(index, 1);
+  localStorage.setItem("volunteerLogEntries", JSON.stringify(entries));
+  renderEntries();
+});
+deleteCell.appendChild(deleteBtn);
+
   });
 
   totalHoursDisplay.innerText = totalHours;
 }
+
